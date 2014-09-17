@@ -1,4 +1,5 @@
 define(["jquery"],function($) {
+	"use strict";
 
 	return {
 		makeDeferred: function() {
@@ -6,7 +7,9 @@ define(["jquery"],function($) {
 		},
 		makePromise: function(deferred) {
 			return deferred.promise();
+		},
+		all: function(promises) {
+			return $.when.apply($, promises)
 		}
 	};
-
 });
